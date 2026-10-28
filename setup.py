@@ -22,6 +22,10 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.10",
+    extras_require={
+        'gpu-cu11': ['cupy-cuda11x>=13.6,<14'],
+        'gpu-cu12': ['cupy-cuda12x>=13.6,<14'],
+    },
     include_package_data=True
 )
 
