@@ -102,7 +102,9 @@ def read_and_compress_local(data_path,
                             skip_samples=0,
                             truncate=last_samp)
 
-    reshaped_data = dict['data'] * scale_factor
+    reshaped_data = dict['data']
+    if scale_factor != 1.0:
+        reshaped_data = reshaped_data * scale_factor
     headers = dict['headers']
     if filter is not None:
         reshaped_data = butter_bandpass_filter(
